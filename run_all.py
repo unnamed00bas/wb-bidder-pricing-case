@@ -28,7 +28,7 @@ def h(title):
 
 
 def task1():
-    h("Задание 1. Цена с СПП и кошельком, красивая цена")
+    h("Цена с СПП и кошельком, красивая цена")
     for k, (b, d, s, cap) in D.GOODS.items():
         pre, after, w = price_chain(b, d, s)
         tgt, direction, bmin, bmax = suggest_pretty(b, d, s, cap)
@@ -59,7 +59,7 @@ def task1():
 
 
 def task2():
-    h("Задание 2. Эффект шага цены")
+    h("Эффект шага цены")
     e = step_effect()
     f = next_step_forecast(e)
     print(f"Заказы {n(e['orders_before'], 2)} -> {n(e['orders_after'], 2)} шт/день ({pct(e['orders_change'])})")
@@ -79,7 +79,7 @@ def task2():
 
 
 def task3():
-    h("Задание 3. Удержание места в поиске")
+    h("Удержание места в поиске")
     before, after = holding_bids()
     spent, rate_h = spend_summary()
     print(f"Место <= 8 держали: до паузы {before} ₽, после включения {after} ₽")
@@ -95,7 +95,7 @@ def task3():
 
 
 def task5():
-    h("Задание 5. Безубыточный CPM")
+    h("Безубыточный CPM")
     be = breakeven_cpm(D.CTR, D.CR, D.BUYOUT, D.PROFIT_PER_BUYOUT)
     e290 = ad_economics(D.CTR, D.CR, D.BUYOUT, D.PROFIT_PER_BUYOUT, D.MIN_BID)
     e700 = ad_economics(D.CTR, D.CR, D.BUYOUT, D.PROFIT_PER_BUYOUT, D.BID_TO_HOLD)
@@ -111,7 +111,7 @@ def task5():
 
 
 def task6():
-    h("Задание 6. Метрики для руководителя (пример)")
+    h("Метрики для руководителя (пример)")
     e = step_effect()
     print(f"Дни запаса: 900 / {n(e['orders_after'], 2)} = {n(days_of_stock(D.STOCK, e['orders_after']), 1)}")
     be = breakeven_cpm(D.CTR, D.CR, D.BUYOUT, D.PROFIT_PER_BUYOUT)
